@@ -2909,7 +2909,6 @@ class ttN_SEED:
 #---------------------------------------------------------------ttN/image START---------------------------------------------------------------------#
 #class ttN_imageREMBG:
 try:
-    from rembg import remove
     class ttN_imageREMBG:
         version = '1.0.0'
         def __init__(self):
@@ -2934,6 +2933,7 @@ try:
         OUTPUT_NODE = True
 
         def remove_background(self, image, image_output, save_prefix, prompt, extra_pnginfo, my_unique_id):
+            from rembg import remove
             image = remove(ttNsampler.tensor2pil(image))
             tensor = ttNsampler.pil2tensor(image)
             
