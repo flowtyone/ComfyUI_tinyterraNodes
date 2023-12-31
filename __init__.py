@@ -40,10 +40,10 @@ def update_config():
         "ttNodes": {
             "auto_update": False,
             "install_rembg": False,
-            "enable_interface": True,
-            "enable_fullscreen": True,
-            "enable_embed_autocomplete": True,
-            "enable_dynamic_widgets": True,
+            "enable_interface": False,
+            "enable_fullscreen": False,
+            "enable_embed_autocomplete": False,
+            "enable_dynamic_widgets": False,
             "enable_dev_nodes": False,
         }
     }
@@ -165,15 +165,17 @@ ttNinterface_JS_file = os.path.join(cwd_path, "js", "ttNinterface.js")
 ttNdynamicWidgets_JS_file = os.path.join(cwd_path, "js", "ttNdynamicWidgets.js")
 ttNfullscreen_JS_file = os.path.join(cwd_path, "js", "ttNfullscreen.js")
 
-if not os.path.exists(web_extension_path):
-    os.makedirs(web_extension_path)
-else:
-    shutil.rmtree(web_extension_path)
-    os.makedirs(web_extension_path)
+# if not os.path.exists(web_extension_path):
+#     os.makedirs(web_extension_path)
+# else:
+#     shutil.rmtree(web_extension_path)
+#     os.makedirs(web_extension_path)
 
-copy_to_web(ttN_JS_file)
-copy_to_web(ttNwidgets_JS_file)
-copy_to_web(ttNxyPlot_JS_file)
+# copy_to_web(ttN_JS_file)
+# copy_to_web(ttNwidgets_JS_file)
+# copy_to_web(ttNxyPlot_JS_file)
+
+WEB_DIRECTORY="./js"
 
 # Enable Custom Styles if True
 if config_value_validator("ttNodes", "enable_interface", 'true') == 'true':
