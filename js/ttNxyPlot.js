@@ -182,6 +182,9 @@ app.registerExtension({
 	name: "comfy.ttN.xyPlot",
 	async beforeRegisterNodeDef(nodeType, nodeData, app) {
 		if (nodeData.name === "ttN xyPlot") {
+		    if (!nodeData.input.hidden?.plot_dict)
+				return;
+
 			plotDict = nodeData.input.hidden.plot_dict[0];
 		
 			for (const key in plotDict) {
